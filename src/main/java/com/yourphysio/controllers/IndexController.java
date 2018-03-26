@@ -11,9 +11,9 @@ public class IndexController {
 		return "index.html";
 	}
 	
-	@RequestMapping("/create")
+/*	@RequestMapping("/create")
 	public String create() {
 		return "create.html";
-	}
+	}*/
 
 }
