@@ -1,4 +1,4 @@
-package com.yourphysio.controllers;
+package com.yourphysio.controller;
 
 import java.util.Collection;
 
@@ -13,37 +13,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.yourphysio.models.User;
-import com.yourphysio.services.UserService;
+import com.yourphysio.model.User;
+import com.yourphysio.service.UserService;
 
 @RestController
 public class UserController {
-	
-	/*	@RequestMapping("/registerUser")
-	public String form() {
-		return "create.html";
-	}*/
-	
+
 	@Autowired
 	UserService userService;
 	
-	//end points
 	@RequestMapping(method=RequestMethod.POST, value="/users", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<User> registerUser(@RequestBody User user) {
 		User userSave = userService.userRegister(user);
-		return new ResponseEntity<User>(userSave, HttpStatus.CREATED);
+		return new ResponseEntity<>(userSave, HttpStatus.CREATED);
 	}
 	
 	@RequestMapping(method=RequestMethod.GET, value="/users", produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection <User>> findAllUsers() {
-		Collection<User> usersFound = userService.userFindAll(); //Spring Boot e Angular JS - Aula 01 Parte 03 #### 25:27 
+		Collection<User> usersFound = userService.userFindAll();
 		return new ResponseEntity<>( usersFound, HttpStatus.OK);
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/users/{id}")
 	public ResponseEntity<User> deleteUser(@PathVariable Integer id) {
 		
-		User userFound = userService.userFindById(id);		
+		User userFound = userService.userFindById(id);
 		if (userFound == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
@@ -57,5 +51,4 @@ public class UserController {
 		return new ResponseEntity<>(userUpdated, HttpStatus.OK);
 	}
 	
-
 }

@@ -1,9 +1,10 @@
-package com.yourphysio.services;
+package com.yourphysio.service;
 
 import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.yourphysio.models.User;
+
+import com.yourphysio.model.User;
 import com.yourphysio.repository.UserRepository;
 
 @Service
@@ -30,6 +31,10 @@ public class UserService {
 	
 	public User userUpdate(User user) {
 		return userRepository.save(user);
+	}
+	
+	public User userFindByEmail(String email) {
+		return userRepository.findByEmailIgnoreCase(email);
 	}
 
 }

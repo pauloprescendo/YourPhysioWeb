@@ -3,11 +3,11 @@ package com.yourphysio.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.yourphysio.model.User;
+import com.yourphysio.model.Role;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface RoleRepository extends JpaRepository<Role, Integer>{
 
-	public User findByEmailIgnoreCase(String email);
+	//Role findByName(String string);
 
 }

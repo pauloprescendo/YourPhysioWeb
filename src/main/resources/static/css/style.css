@@ -1,0 +1,28 @@
+@charset "ISO-8859-1";
+body{
+	padding-top:40px;
+	padding-bottom: 40px;
+	background-color:#dedede;
+}
+
+.form-login{
+	background-color:#fff;
+	max-width: 350px;
+	padding: 15px;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+
+.form-login h2{
+	text-align:center;
+}
+
+.form-login #forget{
+    text-align: center
+}
+
+.form-login #create{
+	margin-top:15px;
+	background-color: #4DAADC;
+	color: #fff;
+}
