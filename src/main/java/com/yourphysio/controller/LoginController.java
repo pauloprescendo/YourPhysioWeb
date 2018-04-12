@@ -26,7 +26,7 @@ public class LoginController {
 		try {
 			User usuario = userService.userFindByEmail(email);
 			if (usuario.getPassword().equals(password)) {
-				return "redirect:/users";
+				return "redirect:/home";
 			} else return "/login";
 		} catch (Exception e) {
 			return "redirect:/cadastro";
