@@ -1,8 +1,8 @@
 @charset "ISO-8859-1";
 body{
-	padding-top:40px;
-	padding-bottom: 40px;
-	background-color:#dedede;
+	padding:0;
+	margin:0;
+	
 }
 
 .form-login{
@@ -26,3 +26,10 @@ body{
 	background-color: #4DAADC;
 	color: #fff;
 }
+
+.img-p{
+	width:150px;
+	height: 150px;
+	margin: 0 auto;
+}
+
