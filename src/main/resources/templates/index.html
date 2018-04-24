@@ -5,15 +5,22 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <script src="./js/app.js"></script>
+<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css" media="screen"/>
 </head>
-<body ng-controller="indexController">
-
-	<div ng-repeat="user in users">
-		{{ user.id + "-" + user.name }}
-	</div>
+<body ng-controller="userController">
+	<h1>Index do spring boot</h1>
 	
-	<h2>INDEX DO SPRING BOOT</h2>
-
+	Ola {{user.name}}<br/>
+	
+	<input type="text" ng-model="user.name"/>
+	<input type="button" class="btn btn-primary" value="Salvar" ng-click="salvarUsuario()"/>
+	<input type="button" class="btn btn-primary" value="Cancelar" ng-click="cancelarAlteracaoUsuario()"/>
+	
+	<div ng-repeat="u in users">
+		{{ u.id + "-" + u.name }}
+		<input type="button" class="btn btn-primary" value="Excluir" ng-click="excluirUsuario(u)"/>
+		<input type="button" class="btn btn-primary" value="Alterar" ng-click="alterarUsuario(u)"/>
+	</div>
 
 </body>
 </html>
