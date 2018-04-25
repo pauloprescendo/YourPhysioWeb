@@ -7,7 +7,7 @@
 	<groupId>com.yourphysio</groupId>
 	<artifactId>YourPhysio</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 
 	<name>YourPhysio</name>
 	<description></description>
@@ -62,6 +62,10 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+		  <groupId>org.postgresql</groupId>
+		  <artifactId>postgresql</artifactId>
 		</dependency>
 		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
