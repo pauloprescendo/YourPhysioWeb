@@ -1,15 +1,12 @@
 package com.yourphysio.model;
 
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-
-import com.yourphysio.model.Role;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="users")
 public class User{
 	
 	@Id
@@ -18,10 +15,7 @@ public class User{
 	private String name;
 	private String email;
 	private String password;
-	
-//	@OneToMany(mappedBy="user")
-//	private List<Role> roles;
-	
+		
 	public User() {
 	}
 	
@@ -29,17 +23,15 @@ public class User{
 		this.name = user.getName();
 		this.email = user.getEmail();
 		this.password = user.getPassword();
-		//this.roles = user.getRoles();
 	}
 	
 	
 
-	public User(String name, String email, String password) { //, List<Role> roles) {
+	public User(String name, String email, String password) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.password = password;
-		//this.roles = roles;
 	}
 
 	public Integer getId() {
@@ -66,13 +58,5 @@ public class User{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-	/*public List<Role> getRoles() {
-		return roles;
-	}
-
-	public void setRoles(List<Role> roles) {
-		this.roles = roles;
-	}*/
 
 }

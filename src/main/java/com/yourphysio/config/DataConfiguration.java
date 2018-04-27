@@ -1,4 +1,4 @@
-package com.yourphysio.config;
+/*package com.yourphysio.config;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -27,3 +27,4 @@ public class DataConfiguration {
         return basicDataSource;
     }
 }
+*/
