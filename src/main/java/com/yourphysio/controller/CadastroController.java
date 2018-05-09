@@ -1,6 +1,7 @@
 package com.yourphysio.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +22,7 @@ public class CadastroController {
 	
 	@RequestMapping(method=RequestMethod.POST,value="/cadastro")
 	public String cadastro(User user) {
-		
+		user.setSenha(new BCryptPasswordEncoder().encode(user.getSenha()));
 		userService.userRegister(user);
 		return "redirect:/login";
 	}

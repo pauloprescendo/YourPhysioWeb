@@ -25,25 +25,28 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 
     </head>
 	<body>
-			<!-- id="main" deixa o toggle bar visivel -->
 		<div id="main" class="bg-primary navbar">
 			<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
 	  				aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon" onclick="openNav()">
-					</span>
+				<span class="navbar-toggler-icon" onclick="openNav()"></span>
 			</button>
 			<nav class="navbar navbar-expand">
-					<a class="navbar-brand navbar-collapse text-white" href="#">Logo_YourPhysio</a>
+				<a class="navbar-brand navbar-collapse text-white" href="#">Logo_YourPhysio</a>
 			</nav>
 		</div>
-		
 		<div id="mySidenav" class="sidenav">
-			  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			  <a class="nav-link" href="profile"><i class="material-icons mr-3">face</i>Perfil</a>
-			  <a class="nav-link" href="#"><i class="material-icons mr-3">fitness_center</i>Exercícios</a>
-			  <a class="nav-link" href="#"><i class="material-icons mr-3">exit_to_app</i>Logout</a>
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<!-- nome do usuario pelo autenticador do thymeleaf -->
+			<div><span sec:authentication="principal.name"></span></div>
+			<a class="nav-link" href="profile"><i class="material-icons mr-3">face</i>Perfil</a>
+			<a class="nav-link" href="#"><i class="material-icons mr-3">fitness_center</i>Exercícios</a>
+			<!-- TODO fazer um link com submmit e POST ou estilizar o botao para que se pareca com os links acima -->
+			<form id="form_submit_logout" action="/logout" method="post" class="navbar-form navbar-right">
+				<button type="submit" class="btn btn-link">
+					<i class="material-icons mr-3">exit_to_app</i>Sair
+				</button>
+			</form>
 		</div>
-
 		<div class="container-fluid text-center bg-light bg-3">
 			<div class="row content">
 				<div class="col-sm-12 text-left">
@@ -53,15 +56,10 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 						<p><img src="" class="img-responsive">Aqui tem uma img da estrutura muscular do corpo humano</img></p>
 					</div>
 				</div>
-				
 			</div>
 		</div>
-		
-
 		<footer class="container-fluid text-center footer bg-dark text-white">
 		   <p>Copyright 2018 © <a href="">YourPhysio</a> <br />All rights reserved.</p>
 		</footer>
-</body>
-    
-    
+	</body>
 </html>
