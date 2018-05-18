@@ -1,4 +1,5 @@
 body {
+	
     font-family: "Lato", sans-serif;
    	transition: background-color .5s;
 }
@@ -11,6 +12,7 @@ body {
     top: 0;
     left: 0;
     background-color: #4e4e4f; /* Azul #007bff*/ 
+ 
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;

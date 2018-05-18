@@ -1,9 +1,286 @@
 <!DOCTYPE html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1>Welcome file</h1>
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en">
+	<head>
+	  <meta charset="utf-8">
+	  <title>Teste</title>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+	  
+	  <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css"/>
+	  <link rel="stylesheet" type="text/css" href="./css./template.css"/>
+	  
+	  <!-- Fonte Roboto -->
+	  <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet"/>
+	   <!-- navbar menu -->
+	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+		    
+	   <!-- JAVASCRIPT E JQUERY -->
+	   <!-- Bootstrap core CSS -->
+	 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+	
+	    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	
+	</head>
+	<body>
+	
+		<nav class="navbar navbar-expand-sm navbar-light fixed-top" id="mainNav">
+	      <div class="container">
+	        <a class="navbar-brand" href="teste">YourPhysio</a>
+	        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+   				<span class="navbar-toggler-icon"></span>
+  			</button>
+	        <div class="collapse navbar-collapse input-group-sm" id="navbarSupportedContent">
+	          <ul class="navbar-nav ml-auto">
+	            <li class="nav-item">
+	            	<a href="login" class="nav-link">Login</a>
+	            </li>
+	            <li class="nav-item">
+	              <a href="cadastro" class="nav-link">Criar conta</a>
+	            </li>
+	          </ul>
+	        </div>
+	      </div>
+	    </nav>
+	    
+	     <header class="masthead">
+		      <div class="container h-100">
+		        <div class="row h-100">
+		          <div class="col-lg-7 my-auto">
+		            <div class="header-content mx-auto">
+		              <h1 class="mb-5">YourPhysio Ã© um app que visa prevenir que dores cotidianas tornem-se lesÃµes.</h1>
+		              <a href="cadastro" class="btn btn-outline btn-xl js-scroll-trigger">Criar conta agora</a>
+		            </div>
+		          </div>
+		          <div class="col-lg-5 my-auto">
+		                <div class="device">
+		                  <div class="screen">
+		                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+		                    <img src="./imgs/yourphysio_app2.png" class="img-fluid" alt="">
+		                  </div>
+		                  <div class="button">
+		                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+		                  </div>
+		                </div>
+		          </div>
+		        </div>
+		      </div>
+    	</header>
+	    
+	    <section class="features bg-light" id="features">
+		      <div class="container">
+		        <div class="section-heading text-center">
+		          <h2>Como funciona o app?</h2>
+		          <p class="">Vejo sÃ³ o que o aplicativo pode fazer!</p>
+		          <hr>
+		        </div>
+		        <div class="row">
+		          <div class="col-lg-4 my-auto">
+		            <div class="device-container">
+		              
+		                <div class="device">
+		                  <div class="screen">
+		                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
+		                    <img src="./imgs/yourphysio_canva.jpg" class="img-fluid" alt="">
+		                  </div>
+		                  <div class="button">
+		                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
+		                  </div>
+		                </div>
+		              
+		            </div>
+		          </div>
+		          <div class="col-lg-8 my-auto">
+		            <div class="container-fluid">
+		              <div class="row">
+		                <div class="col-lg-6">
+		                  <div class="feature-item">
+		                    <i class="icon-screen-smartphone text-primary"></i>
+		                    <h3 >PrevenÃ§Ã£o de lesÃµes</h3>
+		                    <p>Com poucos cliques nosso aplicativo irÃ¡ te sugerir exercicios/alongamentos.</p>
+		                  </div>
+		                </div>
+		                <div class="col-lg-6">
+		                  <div class="feature-item">
+		                    <i class="icon-camera text-primary"></i>
+		                    <h3>ExercÃ­cios sugeridos</h3>
+		                    <p >Nossa inteligÃªncia artificial vai elaborar os melhores exercicios, em forma de imagens animadas,
+		                     visando prevenir lesÃµes</p>
+		                  </div>
+		                </div>
+		              </div>
+		              <div class="row">
+		                <div class="col-lg-6">
+		                  <div class="feature-item">
+		                    <i class="icon-present text-primary"></i>
+		                    <h3 >AtenÃ§Ã£o!</h3>
+		                    <p >O uso desse aplicativo nÃ£o substitui acompanhamento mÃ©dico. Portanto se as dores forem intensas e constantes recomendamos que procure um profissional adequeado</p>
+		                  </div>
+		                </div>
+		                <div class="col-lg-6">
+		                  <div class="feature-item">
+		                    <i class="icon-lock-open text-primary"></i>
+		                    <h3 >Ã grÃ¡tis!</h3>
+		                    <p >Since this theme is MIT licensed, you can use it commercially!</p>
+		                  </div>
+		                </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </section>
+
+	    <section class="download bg-primary text-center text-white" id="">
+	      <div class="container">
+	        <div class="row">
+	          <div class="col-md-8 mx-auto">
+	            <h2 class="section-heading">Baixe agora, Ã© grÃ¡tis!</h2>
+	            <p>Nosso app estÃ¡ disponÃ­vel para android!</p>
+	            <div class="badges">
+	              <a class="badge-link" href="https://play.google.com/store?hl=pt" target="_blank"><img src="./imgs/google-play.svg" alt=""></a>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </section>
+
+	    <section class="contact bg-light" id="contact">
+	        <div class="container">
+	          <div class="row">
+	            <div class="col-lg-12 text-center">
+	              <h2 class="section-heading text-uppercase">Nosso time</h2>
+	            </div>
+	          </div>
+	          <div class="row">
+	            <div class="col-sm-6">
+	              <div class="team-member">
+	                <img class="mx-auto rounded-circle member" src="./imgs/team/1.jpg" alt="">
+	                <h4>Paulo Prescendo</h4>
+	                <p class="text-muted">Desenvolvedor back-end</p>
+	                <ul class="list-inline social-buttons">
+	                    <li class="list-inline-item">
+	                     <a href="#">
+	                      <img src="./imgs/social/twitter.png" class="social"></img>
+	                    </a>
+	                  </li>
+	                  <li class="list-inline-item">
+	                    <a href="#">
+	                      <img src="./imgs/social/octo.png" class="social"></img>
+	                    </a>
+	                    </li>
+	                    <li class="list-inline-item">
+	                      <a href="#">
+	                        <img src="./imgs/linkedin.png" class="social"></img>
+	                      </a>
+	                    </li>
+	                  </ul>
+	              </div>
+	            </div>
+	
+	              <div class="col-sm-6">
+	                <div class="team-member">
+	                  <img class="mx-auto rounded-circle member" src="img/team/2.jpg" alt="">
+	                  <h4>Rafael Evangelista</h4>
+	                  <p class="text-muted">Desenvolvedor front-end</p>
+	                  <ul class="list-inline social-buttons">
+	                    <li class="list-inline-item">
+	                     <a href="#">
+	                      <img src="./imgs/social/twitter.png" class="social"></img>
+	                    </a>
+	                  </li>
+	                  <li class="list-inline-item">
+	                    <a href="#">
+	                      <img src="./imgs/social/octo.png" class="social"></img>
+	                    </a>
+	                    </li>
+	                    <li class="list-inline-item">
+	                      <a href="#">
+	                        <img src="./imgs/linkedin.png" class="social"></img>
+	                      </a>
+	                    </li>
+	                  </ul>
+	                </div>
+	              </div>
+	            </div>  
+	
+	             <div class="row">
+	            <div class="col-sm-6">
+	              <div class="team-member">
+	                <img class="mx-auto rounded-circle member" src="img/team/1.jpg" alt="">
+	                <h4>Richard Ambrosio</h4>
+	                <p class="text-muted">Desenvolvedor back-end</p>
+	                <ul class="list-inline social-buttons">
+	                    <li class="list-inline-item">
+	                     <a href="#">
+	                      <img src="./imgs/social/twitter.png" class="social"></img>
+	                    </a>
+	                  </li>
+	                  <li class="list-inline-item">
+	                    <a href="#">
+	                      <img src="./imgs/social/octo.png" class="social"></img>
+	                    </a>
+	                    </li>
+	                    <li class="list-inline-item">
+	                      <a href="#">
+	                        <img src="./imgs/linkedin.png" class="social"></img>
+	                      </a>
+	                    </li>
+	                  </ul>
+	              </div>
+	            </div>
+	
+	              <div class="col-sm-6">
+	                <div class="team-member">
+	                  <img class="mx-auto rounded-circle member" src="img/team/1.jpg" alt="">
+	                  <h4>Vinicius Neri</h4>
+	                  <p class="text-muted">Desenvolvedor front-end</p>
+	                   <ul class="list-inline social-buttons">
+	                    <li class="list-inline-item">
+	                     <a href="#">
+	                      <img src="./imgs/social/twitter.png" class="social"></img>
+	                    </a>
+	                  </li>
+	                  <li class="list-inline-item">
+	                    <a href="#">
+	                      <img src="./imgs/social/octo.png" class="social"></img>
+	                    </a>
+	                    </li>
+	                    <li class="list-inline-item">
+	                      <a href="#">
+	                        <img src="./imgs/linkedin.png" class="social"></img>
+	                      </a>
+	                    </li>
+	                  </ul>
+	                </div>
+	              </div>
+	            </div>            
+	        </div>
+	    </section>
+
+	      <footer>
+	        <div class="container">
+	          <p>&copy; YourPhysio 2018. Todos os direitos reservados.</p>
+	          <ul class="list-inline">
+	            <li class="list-inline-item">
+	              <a href="#">Privacidade</a>
+	            </li>
+	            <li class="list-inline-item">
+	              <a href="#">Termos</a>
+	            </li>
+	            <li class="list-inline-item">
+	              <a href="#">FAQ</a>
+	            </li>
+	          </ul>
+	        </div>
+	      </footer>
+	    
+	    <script src="./js/template.js"></script>
+	    
+	</body>
 </html>
