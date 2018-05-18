@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +25,7 @@ public class UserController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/users", consumes=MediaType.APPLICATION_JSON_VALUE, produces=MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<User> registerUser(@RequestBody User user) {
+		user.setSenha(new BCryptPasswordEncoder().encode(user.getSenha()));
 		User userSave = userService.userRegister(user);
 		return new ResponseEntity<>(userSave, HttpStatus.CREATED);
 	}
@@ -35,7 +37,7 @@ public class UserController {
 	}
 	
 	@RequestMapping(method=RequestMethod.DELETE, value="/users/{id}")
-	public ResponseEntity<User> deleteUser(@PathVariable Integer id) {
+	public ResponseEntity<User> deleteUser(@PathVariable Long id) {
 		
 		User userFound = userService.userFindById(id);
 		if (userFound == null) {

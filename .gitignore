@@ -25,5 +25,10 @@ local.properties
 # sbteclipse plugin
 .target
 
-# STS (Spring Tool Suite)
-.springBeans
+# intellij
+out/
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+fabric.properties
+.idea/

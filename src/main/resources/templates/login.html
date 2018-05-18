@@ -13,39 +13,21 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	<link rel="stylesheet" type="text/css" href="./css/signin.css" media="screen">
 	<!-- Fonte Roboto -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet"/>
-</head>
-
-<body class="text-center">
+</head>	
 	<div class="container">
-		<form class="form-signin"  method="post" accept-charset="utf-8" >
+		<form action="/login" class="form-signin" method="post" accept-charset="utf-8" >
+			<div th:if="${param.logout}">
+				<div class="alert alert-info">Ate Logo!</div>
+			</div>
 			<h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-			<input type="email" id="inputEmail" name="email" placeholder="Email" class="form-control" required autofocus>
+			<input type="email" id="inputEmail" name="username" placeholder="Email" class="form-control" autofocus>
 			<input type="password" id="inputPassword" name="password" placeholder="Senha" class="form-control" required>
-			<input type="checkbox" class="chkbox" id="remember"> Lembrar minha senha
+			<input type="checkbox" class="chkbox" id="remember-me" name="remember-me"> Lembrar minha senha
 			<input type="submit" id="login" class="btn btn-lg btn-primary btn-block" value="Entrar">
-			
 			<!-- <input type="button" id="loginGoogle" class="btn btn-lg btn-primary btn-block" value="Facebook" /> -->
 			<a class="btn btn-primary btn-block" href="#" role="button" >Entra com o Google</a>
 			<a href="#" id="forget">Esqueci minha senha </a>
 		</form>
-		
-		<!-- 
-		<form class="form-signin">
-      <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
-      <label for="inputEmail" class="sr-only">Email address</label>
-      <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-      <label for="inputPassword" class="sr-only">Password</label>
-      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-		 -->
-		
-		
 	</div>
-
 </body>
 </html>

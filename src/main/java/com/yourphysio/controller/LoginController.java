@@ -15,17 +15,17 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(method=RequestMethod.GET,value="/login")
+	@RequestMapping(method=RequestMethod.GET, path="/login")
 	public String login() {
 		return "login";
 	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/login")
-	public String login(String email, String password) {
+	public String login(String email, String senha) {
 		
 		try {
 			User usuario = userService.userFindByEmail(email);
-			if (usuario.getPassword().equals(password)) {
+			if (usuario.getSenha().equals(senha)) {
 				return "redirect:/home";
 			} else return "/login";
 		} catch (Exception e) {
