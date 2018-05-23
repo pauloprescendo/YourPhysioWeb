@@ -1,4 +1,5 @@
 @charset "ISO-8859-1";
+
 body{
 	padding:0;
 	margin:0;
@@ -31,5 +32,25 @@ body{
 	width:150px;
 	height: 150px;
 	margin: 0 auto;
+}
+
+.form-group{
+	font-size:13px;
+}
+.edit{	
+	border-top:none;
+	border-left:none;
+	border-right:none;
+	width:200px;
+}
+.edit:focus{
+	outline:0;
+	border-bottom:1px solid #4D90FE;
+}
+
+.file{
+	border:none;
+	font-size:13px;
+	width:auto;
 }
 
