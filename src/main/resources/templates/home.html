@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 xmlns:th="http://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	  xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<!-- xmlns:sec="http://www.thymeleaf.org/extras/spring-security" -->
 	<head>
 	
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
@@ -31,18 +33,18 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 				<span class="navbar-toggler-icon" onclick="openNav()"></span>
 			</button>
 			<nav class="navbar navbar-expand">
-				<a class="navbar-brand navbar-collapse text-white" href="home">YourPhysio</a>
+				<a class="navbar-brand navbar-collapse text-white" href="#">YourPhysio</a>
 			</nav>
 		</div>
 		<div id="mySidenav" class="sidenav">
 			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 			<!-- nome do usuario pelo autenticador do thymeleaf -->
-			<div><span sec:authentication="principal.name"></span></div>
-			<a class="nav-link" href="profile"><i class="material-icons mr-3">face</i>Perfil</a>
-			<a class="nav-link" href="#"><i class="material-icons mr-3">fitness_center</i>Exercícios</a>
+			<a class="nav-link" href="#"><span th:text="${nomePrincipal}"></span></a>
+			<a class="nav-link" href="/profile"><i class="material-icons mr-3">face</i>Perfil</a>
+			<a class="nav-link" href="/exercises"><i class="material-icons mr-3">fitness_center</i>Exercícios</a>
 			<!-- TODO fazer um link com submmit e POST ou estilizar o botao para que se pareca com os links acima -->
 			<form id="form_submit_logout" action="/logout" method="post" class="navbar-form navbar-right">
-				<button type="submit" class="btn btn-link">
+				<button type="submit" class="btn-logout btn btn-link">
 					<i class="material-icons mr-3">exit_to_app</i>Sair
 				</button>
 			</form>
@@ -53,11 +55,26 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 					<h4 class="text-center mt-3 text-muted">Toque na parte do corpo
 						dolorida</h4>
 					<div class="text-center">
-						<img src="./imgs/body_front.png" class="img-responsive">
+						<map name="shape">
+							<area shape="rect" alt="Rosto" coords="190, 30, 255, 120" href="#"/>
+							<area shape="rect" alt="Ombro Esquerdo" coords="290, 150, 335, 200" href="#"/>
+							<area shape="rect" alt="Pulso Esquerdo" coords="330, 360, 375, 390" href="#"/>
+							<area shape="rect" alt="Mao Esquerda" coords="345, 395, 400, 450" href="#"/>
+							<area shape="rect" alt="Joelho Esquerdo" coords="240, 560, 290, 610" href="#"/>
+							<area shape="rect" alt="Pé Direito" coords="232, 740, 275, 790" href="#"/>
+							<area shape="rect" alt="Ombro Direito" coords="120, 150, 170, 200" href="#"/>
+							<area shape="rect" alt="Pulso Direito" coords="80, 360, 130, 390" href="#"/>
+							<area shape="rect" alt="Mao Direita" coords="50, 395, 115, 450" href="#"/>
+							<area shape="rect" alt="Joelho Direito" coords="170, 560, 220, 610" href="#"/>
+							<area shape="rect" alt="Pé Direito" coords="175, 740, 222, 790" href="#"/>
+						</map>
+						<img src="./imgs/body_front.png" usemap="#shape">
 					</div>
 				</div>
 			</div>
 		</div>
-		
+		<footer class="container-fluid text-center footer bg-dark text-white">
+		   <p>Copyright 2018 © <a href="">YourPhysio</a> <br />All rights reserved.</p>
+		</footer>
 	</body>
 </html>

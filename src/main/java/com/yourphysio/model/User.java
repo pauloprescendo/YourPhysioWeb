@@ -2,10 +2,7 @@ package com.yourphysio.model;
 
 import java.util.Collection;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,14 +11,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 @Table(name="users")
 public class User implements UserDetails{
 	
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 	
 	@Id
 	@GeneratedValue
 	private Long id;
+	@Column(nullable = false)
 	private String name;
+	@Column(nullable = false, unique = true)
 	private String email;
+	@Column(nullable = false)
 	private String senha;
+	@Column(nullable = false)
+	private int age;
 
 	public User() {
 	}
@@ -30,13 +32,15 @@ public class User implements UserDetails{
 		this.name = user.getName();
 		this.email = user.getEmail();
 		this.senha = user.getSenha();
+		this.age = user.getAge();
 	}
 	
-	public User(String name, String email, String senha) {
+	public User(String name, String email, String senha, int age) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.senha = senha;
+		this.age = age;
 	}
 
 	public Long getId() {
@@ -63,6 +67,12 @@ public class User implements UserDetails{
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {

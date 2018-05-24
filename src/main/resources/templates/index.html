@@ -38,7 +38,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 	        <div class="collapse navbar-collapse input-group-sm" id="navbarSupportedContent">
 	          <ul class="navbar-nav ml-auto">
 	            <li class="nav-item">
-	            	<a href="login" class="nav-link">Login</a>
+	            	<a th:if="${#strings.arrayContains(principalUser,'anonymousUser')}" href="login" class="nav-link">Login</a>
+					<a href="home" class="nav-link" th:text="${nomePrincipal}"></a>
 	            </li>
 	            <li class="nav-item">
 	              <a href="cadastro" class="nav-link">Criar conta</a>

@@ -43,13 +43,13 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 						</li>
 					</ul>
 				</div>
-				<a  class="navbar-brand navbar-collapse text-white" href="#">YourPhysio</a>
+				<a  class="navbar-brand navbar-collapse text-white" href="/home">YourPhysio</a>
 			</nav>        
 				<div class="text-center bg-primary">
 				<!-- Imagem de perfil -->    
 				        
 					<img class="mb-3 rounded-circle img-p" src="./imgs/prof_test.jpg"> <br/>
-					<a href="edit" class="text-center nav-link text-white">
+					<a href="/edit" class="text-center nav-link text-white">
 					Editar<i class="material-icons ml-2">mode_edit</i>
 					</a>   				
 				</div>
@@ -58,8 +58,8 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 		<div class="container-fluid">
 			<div class="row content">
 				<div class="col-sm-12 text-center">
-						<p class="h5 ml-6 text-muted">Nome completo</p> 
-						<p class="h7 ml-6 text-center text-muted">Email</p>
+						<p th:text="${nomePrincipal}" class="h5 ml-6 text-muted"></p>
+						<p th:text="${emailPrincipal}" class="h7 ml-6 text-center text-muted"></p>
 					</div>
 				</div>
 			

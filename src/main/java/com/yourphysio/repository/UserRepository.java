@@ -9,5 +9,6 @@ import com.yourphysio.model.User;
 public interface UserRepository extends JpaRepository<User, Long>{
 
 	public User findByEmailIgnoreCase(String email);
+	public User findUserById(Long id);
 
 }

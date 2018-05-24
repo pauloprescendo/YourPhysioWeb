@@ -1,6 +1,8 @@
 package com.yourphysio.service;
 
 import java.util.Collection;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,7 +28,7 @@ public class UserService {
 	}
 	
 	public User userFindById(Long id) {
-		return userRepository.getOne(id);
+		return userRepository.findUserById(id);
 	}
 	
 	public User userUpdate(User user) {
