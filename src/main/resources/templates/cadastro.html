@@ -16,17 +16,17 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 </head>
 
 <body class="text-center">
-	<div class="container "> 
+	<div class="container ">
 		<form method="post" class="form-signin">
 			<h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
-			<input type="text" id="inputNome" name="name" class="form-control" placeholder="Nome Completo" autofocus>
-			<input type="email" id="inputEmail"  name="email" class="form-control" placeholder="Email">
-			<input type="number" id="inputAge"  name="age" class="form-control" placeholder="Idade">
-			<input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha">
-			<input type="password" id="inputConfirmPassword" name="confimPassword" class="form-control" placeholder="Confirme a senha">
+			<input type="text" id="inputNome" name="name" class="form-control" placeholder="Nome Completo" autofocus required>
+			<input type="email" id="inputEmail"  name="email" class="form-control" placeholder="Email" required>
+			<input type="number" id="inputAge"  name="age" class="form-control" placeholder="Idade" required>
+			<input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha" required>
+			<input type="password" id="inputConfirmPassword" name="confimPassword" class="form-control" placeholder="Confirme a senha" required>
 			<input type="submit" id="create" class="btn btn-lg btn-primary btn-block mt-3" value="Criar conta" >
+			<a href="cadastroInstrutor">Cadastre-se como instrutor aqui</a>
 		</form>
-		
 	</div>
 </body>
 </html>

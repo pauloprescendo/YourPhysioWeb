@@ -19,6 +19,10 @@ public class CadastroController {
 	public String cadastro() {
 		return "cadastro";
 	}
+	@RequestMapping(method=RequestMethod.GET,value="/cadastroInstrutor")
+	public String cadastroInstrutor() {
+		return "cadastroInstrutor";
+	}
 	
 	@RequestMapping(method=RequestMethod.POST,value="/cadastro")
 	public String cadastro(User user) {

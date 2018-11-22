@@ -1,5 +1,7 @@
 package com.yourphysio.controller;
 
+import com.yourphysio.model.Exercise;
+import com.yourphysio.service.ExerciseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +14,7 @@ import com.yourphysio.service.UserService;
 public class ExercisesController {
 	
 	@Autowired
-	UserService userService;
+	ExerciseService exerciseService;
 	
 	@RequestMapping(method=RequestMethod.GET, value="/exercises")
 	public String exercises() {
@@ -20,7 +22,8 @@ public class ExercisesController {
 	}
 	
 	@RequestMapping(method=RequestMethod.POST, value="/exercises")
-	public String exercises(User user) {
+	public String exercises(Exercise exercises) {
+		exerciseService.exerciseRegister(exercises);
 		return "exercises";
 	}
 
